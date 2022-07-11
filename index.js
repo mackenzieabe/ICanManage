@@ -2,7 +2,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path')
 const create = require('./src/template')
-const Manager = require('./lib/Manager')
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
 
 const teamMembers = []
 
@@ -37,17 +38,46 @@ inquirer.prompt([
 
 
 function mainQuestion() {
-
+inquirer.prompt([
+    {
+        type: 'list',
+        name: 'employees',
+        message: 'Please choose one of the following:',
+        choices: ['Engineer', 'Intern', 'Done'] 
+    }
+])
 }
 
-function addEngineer() {
-
+function addEngineer() {//is this taking care of redirecting manager to these prompts?
+inquirer.prompt([
+    {
+        type:'input',
+        name: 'username',
+        message: 'What is the github username of the engineer?'
+    }
+    //Do i need to do the .then answers after each prompt or just at the end?
+]).then(answers => {
+    const engineer= new Engineer(answers.github)
+    teamMembers.push(engineer)
+    createTeam()
+})
 }
+
 
 function addIntern() {
-
+inquirer.prompt ([
+    {
+        type: 'input',
+        name: 'school',
+        message: 'What school did the intern attend?'
+    }
+]).then(answers=> {
+    const intern = new Intern (answers.school)
+    teamMembers.push(intern)
+    createTeam()
+})
 }
-
+//function addDone() ???
 function createTeam() {
     fs.mkdir('dist', err => {
         if (err) throw err;

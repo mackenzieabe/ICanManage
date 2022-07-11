@@ -1,6 +1,6 @@
 
 //add in icons?
-
+//how do I add an href for the email? 
 function buildTeam(team) {
 
     function buildEngineer(engineer) {
@@ -10,8 +10,10 @@ function buildTeam(team) {
         <div>
         <ul>
         <li> "ID: " + ${engineer.getId} </li>
-        <li> "Email: " + ${engineer.getEmail} </li>
-        <li> "Github: " + ${engineer.getGitHub}</li>
+        <li> "Email: " + ${engineer.getEmail} 
+        <a href="mailto:${engineer.getEmail}></li>
+        <li> "Github: " + ${engineer.getGitHub}
+        <a href= "https://github.com/${engineer.getGitHub}></li>
         </ul>
         </div>
     `}
@@ -22,7 +24,8 @@ function buildTeam(team) {
         <div>
         <ul>
         <li> "ID: " + ${intern.getId} </li>
-        <li> "Email: " + ${intern.getEmail} </li>
+        <li> "Email: " + ${intern.getEmail}
+        <a href="mailto:${intern.getEmail}> </li>
         <li> "School: " + ${intern.getSchool}</li>
         </ul>
         </div>
@@ -34,7 +37,8 @@ function buildTeam(team) {
         <div>
         <ul>
         <li> "ID: " + ${manager.getId} </li>
-        <li> "Email: " + ${manager.getEmail} </li>
+        <li> "Email: " + ${manager.getEmail} 
+        <a href="mailto:${manager.getEmail}></li>
         <li> "Office Number: " + ${manager.getOfficeNumber}</li>
         </ul>
         </div>
