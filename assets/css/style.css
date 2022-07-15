@@ -1,0 +1,13 @@
+header{
+    text-align: center;
+    background-color: red;
+    font-size: 30px;
+    color: white;
+}
+
+.main{
+display: flex;
+justify-content: space-between;
+width: 20px;
+margin: auto;
+}

@@ -1,24 +1,23 @@
 
-//add in icons?
-//how do I add an href for the email? 
+//my manager email and office number keeps breaking and I cannot figure out why. Is this the best format to use? Should I be using divs instead of list?
 function buildTeam(team) {
-    
+
     function buildManager(manager) {
-        return `<div>
-        <h1>${manager.getName()}</h1>
-        </div>
+        return `<div class='main'>
         <div>
-        <ul>
-        <li> "ID: " + ${manager.getId()} </li>
-        <li> 
-        <a href="mailto:${manager.getEmail()}> "Email: " + ${manager.getEmail()}</a></li>
-        <li> "Office Number: " + ${manager.getOfficeNumber()}</li>
-        </ul>
+        <img src= "./assets/images/boss.png" alt="coffee cup with boss written on it">
+        <h3>
+        ${manager.getName()}</h3>
+        </div>
+        <div> ID:  ${manager.getId()} </div>
+        <div> Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></div>
+        <div> Office Number: ${manager.getOfficeNumber()}</div>
         </div>
         `}
     function buildEngineer(engineer) {
-        return `<div>
-            <h1>${engineer.getName()}</h1>
+        return `<div class= 'main'>
+        <img src= "./assets/images/engineer.png" alt="pair of glasses">
+            <h3>${engineer.getName()}</h3>
         </div>
         <div><img src='' alt=''> Engineer</div>
         <div>
@@ -31,8 +30,9 @@ function buildTeam(team) {
         </div>
     `}
     function buildIntern(intern) {
-        return `<div>
-        <h1>${intern.getName()}</h1>
+        return `<div class= 'main'>
+        <img src="./assets/images/intern.png" alt="graduation cap">
+        <h3>${intern.getName()}</h3>
         </div>
         <div>
         <ul>
@@ -63,9 +63,11 @@ module.exports = (team) => {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel='stylesheet' href ='style.css'>
+        <link rel="stylesheet" href="./dist/team.html/assets/css/style.css">
         <title>Team Members</title>
     </head>
+    <header>
+        <h1>My Team</h1>
     <body>
         ${buildTeam(team)}
     </body>
