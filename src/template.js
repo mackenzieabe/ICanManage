@@ -4,28 +4,31 @@ function buildTeam(team) {
 
     function buildManager(manager) {
         return `<div class='main'>
-        <div>
-        <img src= "./assets/images/boss.png" alt="coffee cup with boss written on it">
-        <h3>
-        ${manager.getName()}</h3>
+       <div class="name-header">
+            <h2> ${manager.getName()}</h2>
+        <div class="icon">
+        <img src="../assets/css/images/boss.png"/> <h3> ${manager.getRole()}</h3>
         </div>
-        <div> ID:  ${manager.getId()} </div>
-        <div> Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></div>
-        <div> Office Number: ${manager.getOfficeNumber()}</div>
+        </div>
+        <ul>
+        <li>ID: ${manager.getId()} </li>
+        <li> Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+        <li> Office Number: ${manager.getOfficeNumber()}</li>
+        <ul>
         </div>
         `}
     function buildEngineer(engineer) {
-        return `<div class= 'main'>
-        <img src= "./assets/images/engineer.png" alt="pair of glasses">
-            <h3>${engineer.getName()}</h3>
+        return `<div class= "main">
+        <div class="name-header">
+            <h2>${engineer.getName()}</h2>
+            <div class="icon">
+            <img src="../assets/css/images/engineer.png"/> <h3> ${engineer.getRole()}</h3>
+            </div>
         </div>
-        <div><img src='' alt=''> Engineer</div>
-        <div>
         <ul>
-        <li> "ID: " + ${engineer.getId()} </li>
-        <li>  
-        <a href="mailto:${engineer.getEmail()}>"Email: " + ${engineer.getEmail()}</a></li>
-        <li><a href= "https://github.com/${engineer.getGitHub()}>"Github: " + ${engineer.getGitHub()}</a></li>
+        <li> ID: ${engineer.getId()} </li>
+        <li> Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+        <li> GitHub: <a href= "https://github.com/${engineer.getGitHub()}">${engineer.getGitHub()}</a></li>
         </ul>
         </div>
     `}
@@ -63,13 +66,15 @@ module.exports = (team) => {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./dist/team.html/assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
         <title>Team Members</title>
     </head>
     <header>
         <h1>My Team</h1>
+    </header>
     <body>
         ${buildTeam(team)}
+      
     </body>
     </html>
     `
