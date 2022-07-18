@@ -28,21 +28,22 @@ function buildTeam(team) {
         <ul>
         <li> ID: ${engineer.getId()} </li>
         <li> Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-        <li> GitHub: <a href= "https://github.com/${engineer.getGitHub()}">${engineer.getGitHub()}</a></li>
+        <li> GitHub: <a href= "https://github.com/${engineer.getGitHub()}">${engineer.getGitHub()}</a></li> 
         </ul>
         </div>
     `}
     function buildIntern(intern) {
         return `<div class= 'main'>
-        <img src="./assets/images/intern.png" alt="graduation cap">
-        <h3>${intern.getName()}</h3>
+        <div class="name-header">
+            <h2> ${intern.getName()}</h2>
+            <div class="icon">
+            <img src="../assets/css/images/intern.png"/> <h3> ${intern.getRole()}</h3>
+            </div>
         </div>
-        <div>
         <ul>
-        <li> "ID: " + ${intern.getId()} </li>
-        <li> 
-        <a href="mailto:${intern.getEmail()}>"Email: " + ${intern.getEmail()}</a></li>
-        <li> "School: " + ${intern.getSchool()}</li>
+        <li> ID: ${intern.getId()} </li>
+        <li> Email: <a href="mailto:${intern.getEmail()}> ${intern.getEmail()}</a></li>
+        <li> School: ${intern.getSchool()}</li>
         </ul>
         </div>
         `}

@@ -9,10 +9,10 @@ header{
 .main{
 text-align: center;
 display: flex;
+flex-wrap: wrap;
 border: 3px solid black;
 border-radius: 5px;
 justify-content:center;
-flex-direction: column;
 padding: 5px;;
 width: 15%;
 margin: auto;
@@ -22,6 +22,8 @@ font-size: 15px;
 .name-header{
     background-color: blue;
     color: white;
+    display: flex; /*how do I get the blue background to fill the entire div?
+    
 }
 .icon img{
     width: 35px;
