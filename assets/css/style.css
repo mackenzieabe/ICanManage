@@ -1,30 +1,41 @@
-header{
-    padding: 15px;
+header {
+    padding: 20px;
     text-align: center;
     background-color: red;
     font-size: 20px;
     color: white;
+    font-family: 'Titillium Web', sans-serif;
 }
 
-.main{
-text-align: center;
-display: flex;
-flex-wrap: wrap;
-border: 3px solid black;
-border-radius: 5px;
-justify-content:center;
-padding: 5px;;
-width: 15%;
-margin: auto;
-font-size: 15px;
-} 
+.team-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 90px;
+}
 
-.name-header{
-    background-color: blue;
+.main {
+    text-align: center;
+    border-radius: 5px;
+    justify-content: center;
+    padding: 3px;
+    width: 15%;
+    margin: auto;
+    font-size: 17px;
+    font-family: 'Titillium Web', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.main>ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.name-header {
+    background-color: rgb(7, 56, 233);
     color: white;
-    display: flex; /*how do I get the blue background to fill the entire div?
-    
+    margin: 5px auto 5px auto;
 }
-.icon img{
+
+.icon img {
     width: 35px;
 }

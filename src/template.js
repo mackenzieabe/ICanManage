@@ -14,7 +14,7 @@ function buildTeam(team) {
         <li>ID: ${manager.getId()} </li>
         <li> Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
         <li> Office Number: ${manager.getOfficeNumber()}</li>
-        <ul>
+        </ul>
         </div>
         `}
     function buildEngineer(engineer) {
@@ -37,14 +37,16 @@ function buildTeam(team) {
         <div class="name-header">
             <h2> ${intern.getName()}</h2>
             <div class="icon">
-            <img src="../assets/css/images/intern.png"/> <h3> ${intern.getRole()}</h3>
+                <img src="../assets/css/images/intern.png"/> <h3> ${intern.getRole()}</h3>
             </div>
         </div>
+
         <ul>
-        <li> ID: ${intern.getId()} </li>
-        <li> Email: <a href="mailto:${intern.getEmail()}> ${intern.getEmail()}</a></li>
-        <li> School: ${intern.getSchool()}</li>
+            <li> ID: ${intern.getId()} </li>
+            <li> Email: <a href="mailto:${intern.getEmail()}"> ${intern.getEmail()}</a></li>
+            <li> School: ${intern.getSchool()}</li>
         </ul>
+
         </div>
         `}
 
@@ -67,6 +69,9 @@ module.exports = (team) => {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Libre+Bodoni:ital@0;1&family=Montserrat&family=Nanum+Myeongjo&family=Slabo+27px&family=Tajawal:wght@300&family=Titillium+Web&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/style.css">
         <title>Team Members</title>
     </head>
@@ -74,8 +79,9 @@ module.exports = (team) => {
         <h1>My Team</h1>
     </header>
     <body>
-        ${buildTeam(team)}
-      
+        <div class='team-container'>
+            ${buildTeam(team)}
+        </div>
     </body>
     </html>
     `

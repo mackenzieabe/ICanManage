@@ -4,6 +4,7 @@ const path = require('path')
 const create = require('./src/template')
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
 const teamMembers = []
 
@@ -39,7 +40,7 @@ inquirer.prompt([
 
 function mainQuestion() {
     inquirer.prompt([
-        { 
+        {
             type: 'list',
             name: 'main',
             message: 'Please choose one of the following:',
@@ -61,7 +62,7 @@ function mainQuestion() {
 
 function addEngineer() {
     inquirer.prompt([
-        {  
+        {
             type: 'input',
             name: 'name',
             message: 'What is the name of the engineer?'
@@ -78,12 +79,13 @@ function addEngineer() {
         },
         {
             type: 'input',
-            name: 'username',
+            name: 'github',
             message: 'What is the github username of the engineer?'
         }
-        
+
     ]).then(answers => {
-        const engineer = new Engineer(answers.name, answers.id, answers.email,answers.github)
+        console.log(answers.github)
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
         teamMembers.push(engineer)
         mainQuestion()
     })
@@ -91,26 +93,26 @@ function addEngineer() {
 
 function addIntern() {
     inquirer.prompt([
-    {    
-        type: 'input',
-        name: 'name',
-        message: 'What is the name of the intern?'
-    },
-    {
-        type: 'input',
-        name: 'id',
-        message: 'What is the ID of the intern?'
-    },
-    {
-        type: 'input',
-        name: 'email',
-        message: 'What is the email of the intern?'
-    },
-    {    
-        type: 'input',
-        name: 'school',
-        message: 'What school did the intern attend?'
-    }
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the name of the intern?'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is the ID of the intern?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is the email of the intern?'
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'What school did the intern attend?'
+        }
     ]).then(answers => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
         teamMembers.push(intern)
@@ -119,12 +121,15 @@ function addIntern() {
 }
 
 function createTeam() {
-    fs.mkdir('dist', err => {
-        if (err) throw err;
-        console.log("file created")
-    })
+    
+    if (!fs.existsSync('dist')) {
+        fs.mkdir('dist', err => {
+            if (err) throw err;
+            console.log("file created")
+        })
+    }
 
-    fs.writeFile(path.join(__dirname, 'dist/team.html'), create(teamMembers), (err) => {
+    fs.writeFile('dist/team.html', create(teamMembers), (err) => {
         if (err) throw err;
         console.log("Team has been built!")
     })
