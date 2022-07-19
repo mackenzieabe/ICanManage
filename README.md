@@ -7,4 +7,5 @@
 JavaScript, Node.js, CSS, Jest
 
 ## Video of App Use:
-https://drive.google.com/file/d/1TaOl5MUTFERSNVvEAKYULY5VSkpvgvF7/view 
+https://drive.google.com/file/d/1TiHSDgfi1Aey7McG9FWBkWBxpwXpgoP9/view
+ 
